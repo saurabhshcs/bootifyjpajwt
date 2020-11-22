@@ -1,4 +1,4 @@
-# This is a simple example pf JWT token based RestAPI authentication 
+# This is a simple example of JWT token based RestAPI authentication 
 
 Build - gradle
 dependencies used - spring-jpa, spring-web, spring-security, io.jsonwebtoken, mysql-connector
