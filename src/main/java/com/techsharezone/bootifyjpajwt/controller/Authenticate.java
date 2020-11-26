@@ -9,7 +9,8 @@ package com.techsharezone.bootifyjpajwt.controller;
 
 import com.techsharezone.bootifyjpajwt.model.AuthenticationRequest;
 import com.techsharezone.bootifyjpajwt.model.AuthenticationResponse;
-import com.techsharezone.bootifyjpajwt.service.ApplicationUserDetailService;
+import com.techsharezone.bootifyjpajwt.service.BootifyEmailService;
+import com.techsharezone.bootifyjpajwt.service.BootifyUserDetailService;
 import com.techsharezone.bootifyjpajwt.util.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -30,15 +31,21 @@ public class Authenticate {
     private JwtService jwtService;
 
     @Autowired
-    private ApplicationUserDetailService applicationUserDetailService;
+    private BootifyUserDetailService bootifyUserDetailService;
+
+    @Autowired
+    private BootifyEmailService emailService;
 
     @PostMapping("/authenticate")
     public ResponseEntity<?> createTokem(@RequestBody AuthenticationRequest request) {
 
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
 
-        final UserDetails userDetails = applicationUserDetailService.loadUserByUsername(request.getUsername());
+        final UserDetails userDetails = bootifyUserDetailService.loadUserByUsername(request.getUsername());
         final String token = jwtService.generateToken(userDetails);
+
+        emailService.sendEmailWithJWTToken("saurabhshcs@gmail.com", "API-Authentication:Token",
+                "Hello Developer, Please see an JWT Token to access our API- [" + token + "]");
 
         return ResponseEntity.ok(new AuthenticationResponse(token));
     }

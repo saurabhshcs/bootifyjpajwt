@@ -7,7 +7,7 @@ package com.techsharezone.bootifyjpajwt.config;
  */
 
 import com.techsharezone.bootifyjpajwt.filter.JwtRequestFilter;
-import com.techsharezone.bootifyjpajwt.service.ApplicationUserDetailService;
+import com.techsharezone.bootifyjpajwt.service.BootifyUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,17 +19,17 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @EnableWebSecurity
-public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
+public class BootifySecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private ApplicationUserDetailService applicationUserDetailService;
+    private BootifyUserDetailService bootifyUserDetailService;
 
     @Autowired
     private JwtRequestFilter jwtFilter;
 
     @Autowired
     protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(applicationUserDetailService);
+        auth.userDetailsService(bootifyUserDetailService);
     }
 
     @Override

@@ -6,7 +6,7 @@ package com.techsharezone.bootifyjpajwt.filter;
  * @author  saurabhshcs
  */
 
-import com.techsharezone.bootifyjpajwt.service.ApplicationUserDetailService;
+import com.techsharezone.bootifyjpajwt.service.BootifyUserDetailService;
 import com.techsharezone.bootifyjpajwt.util.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -27,7 +27,7 @@ import java.util.Objects;
 public class JwtRequestFilter extends OncePerRequestFilter {
 
     @Autowired
-    private ApplicationUserDetailService applicationUserDetailService;
+    private BootifyUserDetailService bootifyUserDetailService;
 
     @Autowired
     private JwtService jwtService;
@@ -47,7 +47,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
         if (!Objects.isNull(userName) && Objects.isNull(SecurityContextHolder.getContext().getAuthentication())) {
 
-            UserDetails userDetails = this.applicationUserDetailService.loadUserByUsername(userName);
+            UserDetails userDetails = this.bootifyUserDetailService.loadUserByUsername(userName);
 
             if (jwtService.validateToken(jwtToken, userDetails)) {
                 UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
