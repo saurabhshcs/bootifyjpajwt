@@ -4,7 +4,7 @@ Build - gradle
 dependencies used - spring-jpa, spring-web, spring-security, io.jsonwebtoken, mysql-connector
 
 # What it does
-> This application generates JWT token and send this JWT token to the developer email. The developer must use this JWT token to access our API.
+> This application generates JWT token and send this JWT token to the developer's email. The developer must use this JWT token to access our API.
 
 
 # How to run this application
