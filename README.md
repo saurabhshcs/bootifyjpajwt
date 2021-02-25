@@ -3,6 +3,10 @@
 Build - gradle
 dependencies used - spring-jpa, spring-web, spring-security, io.jsonwebtoken, mysql-connector
 
+# What it does
+> This application generates JWT token and send this JWT token to the developer email. The developer must use this JWT token to access our API.
+
+
 # How to run this application
 
 ## Machine Prerequisite
@@ -30,9 +34,6 @@ Create Postgres database and ActiveMQ service with docker-compose:
 docker-compose up -d
 ```
 
-This will install and setup Postgres database with correct database name, username and password,
-likewise for ActiveMQ.
-
 ### Running service for the first time
 In order to force the download of dependencies outside of IntelliJ:
 
@@ -47,22 +48,20 @@ In order to force the download of dependencies outside of IntelliJ:
 #### Run tests (also runs big tests)
 `./gradlew clean test`
 
-#### Run big tests only
-`./gradlew clean bigTest`
-
 #### Build conditionally on tests
 `./gradlew clean build`  
 
 
 This application is running on default port 6009 so that it can be accessible on http://localhost:6009
 
-# What it does
-> This application generates JWT token and send this JWT token to the developer email. The developer must use this JWT token to access our API.
 
 How to do
-The developer first need to hit the https://localhost:6009/authenticate from postman or any rest client.
-The system will generate a JWT token also send this token to the developer's email.
+The developer first need to hit the 
 
+`https://localhost:6009/authenticate`
+
+from postman or any rest client.
+The system will generate a JWT token also send this token to the developer's email.
 
 
 - 📫 Feel free to reach me: @ https://about.me/saurabhshcs
