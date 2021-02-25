@@ -11,8 +11,7 @@ dependencies used - spring-jpa, spring-web, spring-security, io.jsonwebtoken, my
 
 ## Machine Prerequisite
 - Java 8 or later
-- Docker
-- Docker compose
+- JWT Dependencies
 
 Both docker and docker compose come with an installation of Docker Desktop. 
 
@@ -23,17 +22,7 @@ git clone https://github.com/saurabhshcs/bootify-aws.git
 ```
 
 ## Local environment
-
-In order to run the Integration tests a Postgres database is required.
-
-In order to run this service locally, an ActiveMQ service is required. 
-
-Create Postgres database and ActiveMQ service with docker-compose:
  
-```
-docker-compose up -d
-```
-
 ### Running service for the first time
 In order to force the download of dependencies outside of IntelliJ:
 
