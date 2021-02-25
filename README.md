@@ -110,3 +110,5 @@ Reach out to me via [about.me](https://about.me/saurabhshcs)
 
 
 ![Profile views](https://komarev.com/ghpvc/?username=saurabhshcs)
+
+[Linkedin](https://www.linkedin.com/in/saurabhshcs/) | Follow me on - [YouTube](https://www.youtube.com/channel/UCSQqjPw7_tfx1Ie4yYHbcxQ?pbjreload=102)
