@@ -1,5 +1,6 @@
 # Spring-Boot JWT token authentication
-> This is an example of JWT token based REST API authentication using Spring-Boot and JPA
+> This is an example of JWT token based REST API authentication using Spring-Boot and JPA. 
+> It will extend further to have integration with OAuth 2.0
 
 
 ## What is JWT?
