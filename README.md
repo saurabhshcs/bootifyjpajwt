@@ -21,7 +21,7 @@ WT.IO allows you to decode, verify and generate JWT.
 
 ## build.gradle
 
-```
+```gradle
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	implementation('org.springframework.boot:spring-boot-starter-jdbc')
@@ -36,7 +36,7 @@ dependencies {
 
 ## pom.xml
 
-```
+```xml
 <project
     xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -75,6 +75,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 ```
 
 To clone this repository execute the following:
+
 ```
 git clone https://github.com/saurabhshcs/bootify-aws.git
 ```
